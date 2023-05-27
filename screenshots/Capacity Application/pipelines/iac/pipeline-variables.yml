@@ -1,0 +1,10 @@
+##############################
+##### Pipeline Variables #####
+##############################
+
+variables:
+  TF_VAR_REMOTE_RG: 'bf-dev-tfstate'
+  TF_VAR_LOCATION: 'northcentralus'
+  TF_VAR_REMOTE_SA: 'bench2023tfstate'
+  TF_VAR_REMOTE_CR: 'terraform-capapp'
+  tfDestroy: 'false'

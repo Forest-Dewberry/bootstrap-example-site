@@ -1,0 +1,71 @@
+trigger:
+  branches:
+    include:
+    - main
+  paths:
+    include:
+    - src
+    - pipelines/build_standalone_ux
+
+pool:
+  vmImage: ubuntu-latest
+variables:
+- template: pipeline-variables.yml
+
+stages:
+- stage: BUILD
+  jobs:
+  - job: Build
+
+    steps:
+
+    - task: ArchiveFiles@2
+      inputs:
+        rootFolderOrFile: '$(build.sourcesdirectory)/src/api/' # string. Required. Root folder or file to archive. Default: $(Build.BinariesDirectory).
+        includeRootFolder: false # boolean. Required. Prepend root folder name to archive paths. Default: true.
+        archiveType: 'zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip' # string. Required. Archive file to create. Default: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip.
+        replaceExistingArchive: true # boolean. Required. Replace existing archive. Default: true.
+        verbose: true # boolean. Force verbose output. Default: false.
+        #quiet: false # boolean. Force quiet output. Default: false.
+
+    - task: AzureFunctionApp@1
+      displayName: Copy API To SA
+      inputs:
+        azureSubscription: 'bf-united-dev' 
+        appType: functionAppLinux
+        appName: bf-capacity-tool-api
+        resourceGroupName: bf-capacity-tool-rg
+        deployToSlotOrASE: false
+        slotName: 'production' 
+        package: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip' # string. Required. Package or folder. Default: $(System.DefaultWorkingDirectory)/**/*.zip.
+        runtimeStack: 'PYTHON|3.9'
+        deploymentMethod: 'auto'
+
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '16.x'
+      displayName: 'Install Node.js'
+
+    - script: |
+        cd ./src/standalone_ux
+        npm install -g yarn vite @azure/static-web-apps-cli
+        yarn install
+      displayName: 'Yarn Install'
+
+    - script: |
+        cd ./src/standalone_ux
+        vite build
+      displayName: 'Build UX'
+
+    - task: AzureCLI@2
+      displayName: Copy UX To SA
+      inputs:
+        azureSubscription: 'bf-united-dev'
+        scriptType: pscore
+        scriptLocation: inlineScript
+        inlineScript: |
+          cd $(build.sourcesdirectory)/src/standalone_ux
+          $token = az staticwebapp secrets list --name bf-capacity-tool-app --query "properties.apiKey"
+          swa deploy --env Production --deployment-token $token
+

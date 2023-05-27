@@ -1,0 +1,5 @@
+az network vnet subnet create \
+        --name publicsubnet \
+        --vnet-name vnet \
+        --resource-group learn-576556d0-da63-415d-b9a6-c42d207334aa \
+        --address-prefixes 10.0.0.0/24

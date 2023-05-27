@@ -1,0 +1,22 @@
+{
+    "bindings": [
+      {
+        "authLevel": "anonymous",
+        "type": "httpTrigger",
+        "direction": "in",
+        "name": "req",
+        "route":"sync/{*restOfPath}",
+        "methods": [
+          "get",
+          "post",
+          "put",
+          "delete"
+        ]
+      },
+      {
+        "type": "http",
+        "direction": "out",
+        "name": "$return"
+      }
+    ]
+  }

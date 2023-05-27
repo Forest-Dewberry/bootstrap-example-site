@@ -1,0 +1,8 @@
+az vm create \
+    --resource-group learn-576556d0-da63-415d-b9a6-c42d207334aa \
+    --name nva \
+    --vnet-name vnet \
+    --subnet dmzsubnet \
+    --image UbuntuLTS \
+    --admin-username azureuser \
+    --admin-password sdfERE787__sdf

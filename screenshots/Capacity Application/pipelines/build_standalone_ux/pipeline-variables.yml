@@ -1,0 +1,9 @@
+##############################
+##### Pipeline Variables #####
+##############################
+
+variables:
+  TF_VAR_REMOTE_RG: 'bf-capacity-tool-rg'
+  TF_VAR_LOCATION: 'centralus'
+  TF_VAR_REMOTE_SA: 'bfcapacitytool'
+

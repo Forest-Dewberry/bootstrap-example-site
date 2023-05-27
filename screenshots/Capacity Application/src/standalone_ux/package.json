@@ -1,0 +1,44 @@
+{
+  "name": "vuetify-project",
+  "version": "0.0.0",
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "rimraf dev-dist && cross-env DEBUG=vite-plugin-pwa:* SW_DEV=true vite --force",
+    "build": "cross-env DEBUG=vite-plugin-pwa:* vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@mdi/js": "^7.1.96",
+    "axios": "^1.2.1",
+    "dexie": "^3.2.3",
+    "register-service-worker": "^1.7.1",
+    "roboto-fontface": "*",
+    "ten-form": "^0.5.8",
+    "uuid": "^9.0.0",
+    "vue": "^3.2.38",
+    "vue-router": "^4.1.6",
+    "vue3-charts": "^1.1.33",
+    "vuetify": "^3.1.10",
+    "webfontloader": "^1.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-replace": "^5.0.2",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vueuse/core": "^9.6.0",
+    "cross-env": "^7.0.3",
+    "date-fns": "^2.29.3",
+    "rimraf": "^3.0.2",
+    "sass": "^1.56.2",
+    "sass-loader": "^13.2.0",
+    "typescript": "^4.9.4",
+    "vite": "^4.1.4",
+    "vite-plugin-chunk-split": "^0.4.7",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-mkcert": "^1.10.1",
+    "vite-plugin-pwa": "^0.14.0",
+    "vite-plugin-vuetify": "^1.0.2",
+    "webpack": "^5.0.0",
+    "workbox-build": "^6.5.4",
+    "workbox-window": "^6.5.4"
+  }
+}
