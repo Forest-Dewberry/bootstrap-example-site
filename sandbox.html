@@ -26,10 +26,51 @@
 <body>
 
 
-  <div class="container">
+  <!-- <div class="container">
+    <div class="mx-auto" style="width: 200px;">
+      Centered element with lots of text so it must wrap or overextend. It wrapped!
+    </div>
+    
 
+  </div> -->
 
-  </div>
+  <div class="row row-content">
+    <div class="col-sm-6 mx-auto">
+        <div class="card">
+            <h3 class="bg-info text-white p-3">Reserve a Campsite</h3>
+            <div class="card-body">
+                <form class="form-group" id="reserveForm">
+                    <div class="row form-group">
+                        <label class="col-sm-6">Number of campers</label>
+                        <div class="col-sm-6 col-form-label">
+                            <select class="form-control" name="numCampers" id="numCampers">
+                                <option value="">select...</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-sm-6 col-form-label" for="date">Date</label>
+                        <div class="col-sm-6">
+                            <input class="form-control" type="date" name="date" id="date">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col">
+                            <button class="btn btn-primary" type="submit" value="submit">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 
 
 
