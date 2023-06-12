@@ -83,33 +83,65 @@
         <div class="row ">
             <div class="col-md-9">
                 <h4>Community Partners</h4>
-                <ul class="nav nav-tabs">
-                    <li class="nav-item"><a role="tab" href="#bootstrap" data-toggle="tab" class="nav-link">Bootstrap
-                            Outfitters</a></li>
-                    <li class="nav-item"><a role="tab" href="#git" data-toggle="tab" class="nav-link">Git Out
-                            Expeditions</a></li>
-                    <li class="nav-item"><a role="tab" href="#mongo" data-toggle="tab" class="nav-link">Mongo Fly
-                            Shop</a></li>
-                    <li class="nav-item"><a role="tab" href="#node" data-toggle="tab" class="nav-link">Node Outdoor
-                            Apparel</a></li>
-                </ul>
-                <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane fade show active" id="bootstrap">
-                        <h4>Bootstrap Outfitters <small>Outdoor Gear Specialists</small></h4>
-                        <p>Bootstrap Outfitters supplies you with the gear you need at prices you can't beat.</p>
+                <div id="accordion">
+                    <div class="card">
+                        <div class="tab card-header">
+                            <h4>
+                                <a data-target="#bootstrap" data-toggle="collapse"> Bootstrap Outfitters <small>Outdoor
+                                        Gear Specialists</small>
+                                </a>
+                            </h4>
+                            <div id="bootstrap" class="collapse show" data-parent="accordion">
+                                <div class="card-body">
+                                    <p>Bootstrap Outfitters supplies you with the gear you need at prices you can't
+                                        beat.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div role="tabpanel" class="tab-pane fade" id="git">
-                        <h4>Git Out Expeditions <small>Group Adventure Expeditions</small></h4>
-                        <p>Join Git Out Expeditions to explore new horizons with a group of other adventurers!</p>
+                    <div class="card">
+                        <div class="tab card-header">
+                            <h4>
+                                <a data-target="#git" data-toggle="collapse" class="collapsed"> Git Out Expeditions
+                                    <small>Group
+                                        Adventure Expeditions</small>
+                                </a>
+                            </h4>
+                            <div id="git" class="collapse" data-parent="accordion">
+                                <div class="card-body">
+                                    <p>Join Git Out Expeditions to explore new horizons with a group of other
+                                        adventurers!</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div role="tabpanel" class="tab-pane fade" id="mongo">
-                        <h4>Mongo Fly Shop <small>Your Neighborhood Fly Fishing Shop</small></h4>
-                        <p>Need a new fishing pole, a tacklebox, or flies of all kinds? Stop by Mongo Fly Shop.</p>
+                    <div class="card">
+                        <div class="tab card-header">
+                            <h4><a data-target="#mongo" data-toggle="collapse" class="collapsed"> Mongo Fly Shop
+                                    <small>Your
+                                        Neighborhood Fly Fishing Shop</small></a></h4>
+                            <div id="mongo" class="collapse" data-parent="accordion">
+                                <div class="card-body">
+                                    <p>Need a new fishing pole, a tacklebox, or flies of all kinds? Stop by Mongo Fly
+                                        Shop.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div role="tabpanel" class="tab-pane fade" id="node">
-                        <h4>Node Outdoor Apparel <small>Outdoor Clothes &amp; Shoes</small></h4>
-                        <p>From polar fleeces to swimsuits, hiking boots to waders, a visit to Node will be sure to get
-                            you covered.</p>
+                    <div class="card">
+                        <div class="tab card-header">
+                            <h4><a data-target="#node" data-toggle="collapse" class="collapsed"> Node Outdoor Apparel
+                                    <small>Outdoor
+                                        Clothes &amp; Shoes</small></a></h4>
+                            <div id="node" class="collapse" data-parent="accordion">
+                                <div class="card-body">
+                                    <p>From polar fleeces to swimsuits, hiking boots to waders, a visit to Node will be
+                                        sure to
+                                        get
+                                        you covered.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
